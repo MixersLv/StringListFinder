@@ -9,7 +9,10 @@ public class logic {
     ArrayList<String> matches;
     Scanner scanner;
     String searchword;
+    int matchcount = 0;
+    String eq = "=".repeat(50);
 
+    // RUNS ALL METHODS
     public void run() {
         scanner = new Scanner(System.in);
         //generate100();
@@ -17,14 +20,17 @@ public class logic {
         printlist();
         search();
         printsearch();
+        keepsearching();
     }
 
+    // MADE FOR TESTING
     public void generate100(){
         for (int i = 0; i <= 100; i++) {
             mylist.add(String.valueOf(i));
         }
     }
 
+    // ASKS FOR STRING INPUT
     public void askinput() {
 
         boolean keepask = true;
@@ -48,6 +54,7 @@ public class logic {
 
     }
 
+    // PRINTS OUT THE WHOLE LIST
     public void printlist() {
 
         System.out.println("\n=====LIST CONTENT=====");
@@ -61,6 +68,7 @@ public class logic {
 
     }
 
+    // ASKS AND SEARCHES FOR SEARCHWORD IN EACH LIST INDEX
     public void search(){
         matches = new ArrayList<String>();
 
@@ -70,7 +78,8 @@ public class logic {
         for (int i = 0; i < mylist.size(); i++) {
 
             if(mylist.get(i).contains(searchword)){
-               matches.add(mylist.get(i));
+                matches.add(mylist.get(i));
+                matchcount++;
             }
 
             else{
@@ -81,20 +90,34 @@ public class logic {
 
     }
 
+    // PRINTS OUT THE MATCHING STRINGS
     public void printsearch(){
-        String eq = "=".repeat(50);
         System.out.println(eq+ "\nMatching results containing: " + searchword + "\n");
 
-        if(!mylist.contains(searchword)){
+        for (int i = 0; i < matches.size(); i++) {
+            System.out.println(matches.get(i));
+        }
+
+        if(matchcount==0){
             System.out.println("No match was found!");
-                System.exit(0);
         }
         else{
             // DO NOTHING
         }
 
-        for (int i = 0; i < matches.size(); i++) {
-            System.out.println(matches.get(i));
+    }
+
+    public void keepsearching(){
+        System.out.println("\n" + eq + "\nDo you want to search another keyword? ( YES/NO ): ");
+        String answerkeepsearch = scanner.nextLine();
+        if(answerkeepsearch.equals("YES")){
+            search();
+                System.out.println(eq);
+            printsearch();
+            keepsearching();
+        }
+        else{
+            System.exit(0);
         }
     }
 
