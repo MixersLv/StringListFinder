@@ -112,7 +112,7 @@ public class logic {
         String answerkeepsearch = scanner.nextLine();
         if(answerkeepsearch.equals("YES")){
             search();
-                System.out.println(eq);
+            System.out.println(eq);
             printsearch();
             keepsearching();
         }
