@@ -1,9 +1,18 @@
-public class Main extends logic{
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.util.Scanner;
 
-    public static void main(String[] args) {
+public class Main {
 
-        logic l = new logic();
+    public static void main(String[] args) throws IOException {
+        InputStream dictionary = Files.newInputStream(Path.of("./files/wordlist.txt"));
+        Scanner userInput = new Scanner(System.in);
+        Logic l = new Logic(dictionary, userInput);
         l.run();
+
     }
+
 
 }
