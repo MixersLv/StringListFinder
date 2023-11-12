@@ -1,6 +1,4 @@
 import java.io.InputStream;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -13,9 +11,9 @@ public class Logic {
     private final Scanner scanner;
     private String searchword;
 
-   public Logic(InputStream dictionary, Scanner scanner){
-      this.dictionary = dictionary;
-      this.scanner = scanner;
+    public Logic(InputStream dictionary, Scanner scanner) {
+        this.dictionary = dictionary;
+        this.scanner = scanner;
     }
 
     // RUNS ALL METHODS
@@ -37,10 +35,10 @@ public class Logic {
     // ASKS FOR STRING INPUT
     public void readDictionary() {
         Scanner inputd = new Scanner(dictionary);
-       while (inputd.hasNextLine()){
-           String word = inputd.nextLine();
-           wordList.add(word);
-       }
+        while (inputd.hasNextLine()) {
+            String word = inputd.nextLine();
+            wordList.add(word);
+        }
     }
 
 
