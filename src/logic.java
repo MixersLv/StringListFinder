@@ -109,7 +109,7 @@ public class logic {
 
     public void keepsearching(){
         System.out.println("\n" + eq + "\nDo you want to search another keyword? ( YES/NO ): ");
-        String answerkeepsearch = scanner.nextLine();
+        String answerkeepsearch = scanner.nextLine().toUpperCase();
         if(answerkeepsearch.equals("YES")){
             search();
             System.out.println(eq);
@@ -119,6 +119,10 @@ public class logic {
         else{
             System.exit(0);
         }
+    }
+
+    public void wdwjodbhwkhdb(){
+        wdwdoiuwqhdoiuwq
     }
 
 }
