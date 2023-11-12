@@ -121,8 +121,4 @@ public class logic {
         }
     }
 
-    public void wdwjodbhwkhdb(){
-        wdwdoiuwqhdoiuwq
-    }
-
 }
